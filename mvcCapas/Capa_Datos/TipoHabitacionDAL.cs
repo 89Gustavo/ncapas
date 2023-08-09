@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 using Capa_Entidad;
 
@@ -39,8 +40,8 @@ namespace Capa_Datos
         public List<TipoHabitacionCLS> listarrTipoHabitacion()
         {
             List<TipoHabitacionCLS> lista = null;
-
-            using (SqlConnection cn = new SqlConnection("Data Source=LP-OP-03;Initial Catalog=BDHotel;Persist Security Info=True;User ID=sa;Password=Fantasmita@0608")) 
+            string cadena = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
+            using (SqlConnection cn = new SqlConnection(cadena)) 
             {
 
                 try
