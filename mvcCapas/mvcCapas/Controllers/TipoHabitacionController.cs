@@ -26,7 +26,7 @@ namespace mvcCapas.Controllers
         }
 
         //[{"id":1,"nombre":"Simple","descripcion":"Solo para uno"},{"id":2,"nombre":"Doble","descripcion":"Solo para casados"}]
-        public ActionResult lista() {
+        public ActionResult Lista() {
 
             TipoHabitacionBL obj = new TipoHabitacionBL();
             return Json(obj.listarrTipoHabitacion(),JsonRequestBehavior.AllowGet);
