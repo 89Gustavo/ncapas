@@ -1,6 +1,5 @@
 C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\Capa_Entidad\bin\Debug\Capa_Entidad.dll
 C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\Capa_Entidad\bin\Debug\Capa_Entidad.pdb
-C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\Capa_Entidad\obj\Debug\Capa_Entidad.csproj.AssemblyReference.cache
 C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\Capa_Entidad\obj\Debug\Capa_Entidad.csproj.CoreCompileInputs.cache
 C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\Capa_Entidad\obj\Debug\Capa_Entidad.dll
 C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\Capa_Entidad\obj\Debug\Capa_Entidad.pdb

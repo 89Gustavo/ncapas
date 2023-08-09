@@ -19,13 +19,9 @@ C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\Microsoft.DiaSymRe
 C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\Microsoft.Managed.Core.targets
 C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\System.Collections.Immutable.dll
-C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\System.IO.FileSystem.dll
-C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\System.Reflection.Metadata.dll
-C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\System.Security.Cryptography.Primitives.dll
 C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\System.Text.Encoding.CodePages.dll
 C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\System.ValueTuple.dll
 C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\vbc.exe
 C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\vbc.exe.config
 C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\vbc.rsp

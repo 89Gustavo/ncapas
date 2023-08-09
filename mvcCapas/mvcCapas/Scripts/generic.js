@@ -29,6 +29,6 @@ function pintar(objConfiguratcion){
 
             contenido += "</table>"
             document.getElementById(objConfiguratcion.id).innerHTML = contenido;
-            //alert(res)
+          //  alert(res)
         })
 }

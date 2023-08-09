@@ -114,11 +114,13 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\generic.js" />
     <Content Include="Scripts\tipoHabitacion.js" />
+    <Content Include="Scripts\tipoUsuario.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\TipoHabitacionController.cs" />
+    <Compile Include="Controllers\TipoUsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -159,6 +161,7 @@
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Views\TipoHabitacion\VistaPruebaInicio.cshtml" />
+    <Content Include="Views\TipoUsuario\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
