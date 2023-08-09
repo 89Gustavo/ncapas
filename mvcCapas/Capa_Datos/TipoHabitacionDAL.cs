@@ -11,7 +11,7 @@ using Capa_Entidad;
 
 namespace Capa_Datos
 {
-    public class TipoHabitacionDAL
+    public class TipoHabitacionDAL:CadenaDAL
     {
         /*        public List<TipoHabitacionCLS> listarrTipoHabitacion(){
 
@@ -40,7 +40,7 @@ namespace Capa_Datos
         public List<TipoHabitacionCLS> listarrTipoHabitacion()
         {
             List<TipoHabitacionCLS> lista = null;
-            string cadena = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
+           // string cadena = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
             using (SqlConnection cn = new SqlConnection(cadena)) 
             {
 

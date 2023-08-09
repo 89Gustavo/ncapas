@@ -13,7 +13,7 @@ using Capa_Entidad;
 
 namespace Capa_Datos
 {
-    public class tipoUsuarioDAL
+    public class tipoUsuarioDAL:CadenaDAL
     {
 
         /*    public List<tipoUsuairoCLS> listarTipoUsuario(){
@@ -36,7 +36,7 @@ namespace Capa_Datos
         public List<tipoUsuairoCLS> listarTipoUsuario()
         {
             List<tipoUsuairoCLS> lista = null;
-            string cadena = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
+            //string cadena = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
             using (SqlConnection cn = new SqlConnection(cadena))
             {
 
