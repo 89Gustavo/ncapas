@@ -54,15 +54,19 @@ namespace Capa_Datos
                         cmd.CommandType = CommandType.StoredProcedure;
                         
                         SqlDataReader drd = cmd.ExecuteReader();
-                        TipoHabitacionCLS oTipoHabitacionCLS;
+                        
                        
                         if (drd != null) {
                             lista = new List<TipoHabitacionCLS>();
+                            TipoHabitacionCLS oTipoHabitacionCLS;
+                            int posId = drd.GetOrdinal("IIDTIPOHABILITACION");
+                            int posNombre = drd.GetOrdinal("NOMBRE");
+                            int posDescripcion = drd.GetOrdinal("DESCRIPCION");
                             while (drd.Read()) {
                                 oTipoHabitacionCLS = new TipoHabitacionCLS();
-                                oTipoHabitacionCLS.id=drd.GetInt32(0);
-                                oTipoHabitacionCLS.nombre = drd.GetString(1);
-                                oTipoHabitacionCLS.descripcion = drd.GetString(2);
+                                oTipoHabitacionCLS.id=drd.GetInt32(posId);
+                                oTipoHabitacionCLS.nombre = drd.GetString(posNombre);
+                                oTipoHabitacionCLS.descripcion = drd.GetString(posDescripcion);
 
                                 lista.Add(oTipoHabitacionCLS);
                             }

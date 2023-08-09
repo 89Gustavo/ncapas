@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CadenaDAL.cs" />
+    <Compile Include="CamalDAL.cs" />
+    <Compile Include="MarcaDAL.cs" />
     <Compile Include="TipoHabitacionDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tipoUsuarioDAL.cs" />
