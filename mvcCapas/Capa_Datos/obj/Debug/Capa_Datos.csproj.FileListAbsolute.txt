@@ -1,0 +1,9 @@
+C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\Capa_Datos\bin\Debug\Capa_Datos.dll
+C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\Capa_Datos\bin\Debug\Capa_Datos.pdb
+C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\Capa_Datos\bin\Debug\Capa_Entidad.dll
+C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\Capa_Datos\bin\Debug\Capa_Entidad.pdb
+C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\Capa_Datos\obj\Debug\Capa_Datos.csproj.AssemblyReference.cache
+C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\Capa_Datos\obj\Debug\Capa_Datos.csproj.CoreCompileInputs.cache
+C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\Capa_Datos\obj\Debug\Capa_Datos.csproj.CopyComplete
+C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\Capa_Datos\obj\Debug\Capa_Datos.dll
+C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\Capa_Datos\obj\Debug\Capa_Datos.pdb

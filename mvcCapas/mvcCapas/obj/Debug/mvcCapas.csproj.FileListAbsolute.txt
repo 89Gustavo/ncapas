@@ -62,3 +62,9 @@ C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\System.Buffers.dll
 C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\System.Memory.dll
 C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\System.Numerics.Vectors.dll
 C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\Capa_Entidad.dll
+C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\Capa_Negocio.dll
+C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\Capa_Datos.dll
+C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\Capa_Entidad.pdb
+C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\Capa_Negocio.pdb
+C:\proyectoCsharp\proyectoNCAPAS\mvcCapas\mvcCapas\bin\Capa_Datos.pdb
