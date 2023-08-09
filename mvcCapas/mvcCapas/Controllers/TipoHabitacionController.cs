@@ -31,5 +31,11 @@ namespace mvcCapas.Controllers
             TipoHabitacionBL obj = new TipoHabitacionBL();
             return Json(obj.listarrTipoHabitacion(),JsonRequestBehavior.AllowGet);
         }
+        public ActionResult filtrarTipoHabicionNombre( string nombreHabitacion)
+        {
+
+            TipoHabitacionBL obj = new TipoHabitacionBL();
+            return Json(obj.filtraTipoHabitacionNombre(nombreHabitacion), JsonRequestBehavior.AllowGet);
+        }
     }
 }

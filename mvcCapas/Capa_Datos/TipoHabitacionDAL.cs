@@ -83,5 +83,58 @@ namespace Capa_Datos
 
                 return lista;
         }
+
+        public List<TipoHabitacionCLS> filtrarTipoHabitacion(string nombreHabitacion)
+        {
+            List<TipoHabitacionCLS> lista = null;
+            // string cadena = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
+            using (SqlConnection cn = new SqlConnection(cadena))
+            {
+
+                try
+                {
+                    cn.Open();
+
+
+                    using (SqlCommand cmd = new SqlCommand("uspFiltarTipoHabitacion", cn))
+                    {
+                        // buena practica indicar que prcedure
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@nombrehabitacion", nombreHabitacion);
+                        SqlDataReader drd = cmd.ExecuteReader();
+
+
+                        if (drd != null)
+                        {
+                            lista = new List<TipoHabitacionCLS>();
+                            TipoHabitacionCLS oTipoHabitacionCLS;
+                            int posId = drd.GetOrdinal("IIDTIPOHABILITACION");
+                            int posNombre = drd.GetOrdinal("NOMBRE");
+                            int posDescripcion = drd.GetOrdinal("DESCRIPCION");
+                            while (drd.Read())
+                            {
+                                oTipoHabitacionCLS = new TipoHabitacionCLS();
+                                oTipoHabitacionCLS.id = drd.GetInt32(posId);
+                                oTipoHabitacionCLS.nombre = drd.GetString(posNombre);
+                                oTipoHabitacionCLS.descripcion = drd.GetString(posDescripcion);
+
+                                lista.Add(oTipoHabitacionCLS);
+                            }
+                        }
+                    }
+
+
+                    cn.Close();
+                }
+                catch (Exception ex)
+                {
+                    cn.Close();
+                }
+            }
+
+            return lista;
+        }
+
+
     }
 }

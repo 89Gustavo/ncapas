@@ -35,3 +35,7 @@ function pintar(objConfiguratcion){
           //  alert(res)
         })
 }
+
+function get(id) {
+    return document.getElementById(id).value;
+}
