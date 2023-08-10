@@ -14,7 +14,8 @@ function listarTipoHabtiacion() {
         url: "Cama/filtrarCama",
         nombrParametro: "nombreCama",
         id: "txtCama",
-        type:"text",
+        type: "text",
+        button: false,
         placeholder: "Ingrese cama",
         idBoton:"btnCama"
     })

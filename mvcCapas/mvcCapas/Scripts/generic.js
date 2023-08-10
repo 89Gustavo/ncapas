@@ -21,6 +21,8 @@ function pintar(objConfiguratcion, objBusqueda){
                     objBusqueda.idBoton = "btnBuscar"
                 if (objBusqueda.type == undefined)
                     objBusqueda.type = "text"
+                if (objBusqueda.button == undefined)
+                    objBusqueda.id = true
 
                 if (objConfiguratcion.id == undefined)
                     objConfiguratcion.id = "divTabla"
@@ -29,10 +31,16 @@ function pintar(objConfiguratcion, objBusqueda){
                 objBusquedaGlobal = objBusqueda;
 
                 contenido += `<div class="input-group mb-3">`
-                contenido += `<input type="${objBusqueda.type}" class="form-control" id="${objBusqueda.id}"placeholder="${objBusqueda.placeholder}" >`
-
-                contenido +=`<button class="btn btn-primary" type="button"onclick="Buscar()" id="${objBusqueda.idBoton}">BUSCAR</button>
-                        </div >`
+                contenido += `<input type="${objBusqueda.type}" 
+                                class="form-control"
+                                id="${objBusqueda.id}"
+                               ${objBusqueda.button == true ? "" : "onkeyup = 'Buscar()'"}
+                               
+                                placeholder="${objBusqueda.placeholder}" >`
+                if (objBusqueda.button == true) { 
+                    contenido += `<button class="btn btn-primary" type="button"onclick="Buscar()" id="${objBusqueda.idBoton}">BUSCAR</button>`
+                }
+                contenido += `</div >`
             }
             contenido += "<div id='divCotenido'>"
             contenido += generarTabla(objConfiguratcion, res);
@@ -75,17 +83,35 @@ function generarTabla(objConfiguratcion, res) {
     return contenido;
 }
 
+function fetchGet(url, callback) {
+    var raiz = document.getElementById("hdfOculto").value;
+    var urlAbolute = window.location.protocol + "//" +window.location.host + raiz + url;
+
+    fetch(urlAbolute).then(res => res.json())
+        .then(res => {
+
+            callback(res)
+           
+        }).catch(err => {
+            console.log(e)
+
+        })
+}
+
 function Buscar() {
     var objConf = objConfiguratcionGlobal;
     var objBusc = objBusquedaGlobal;
-
-
     var valor = get(objBusc.id);
-    fetch(`${objBusc.url}/?${objBusc.nombrParametro}=` + valor)
+    fetchGet(`${objBusc.url}/?${objBusc.nombrParametro}=` + valor, function (res) { 
+        var rpt = generarTabla(objConf, res);
+        document.getElementById("divCotenido").innerHTML = rpt;
+    })
+    
+    /*fetch(`${objBusc.url}/?${objBusc.nombrParametro}=` + valor)
         .then(res => res.json())
         .then(res => {
             var rpt = generarTabla(objConf, res);
             document.getElementById("divCotenido").innerHTML = rpt;
         })
-
+        */
 }
