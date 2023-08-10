@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CamaCLS.cs" />
     <Compile Include="MarcaCLS.cs" />
+    <Compile Include="ProductosCLS.cs" />
     <Compile Include="TipoHabitacionCLS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tipoUsuairoCLS.cs" />

@@ -115,6 +115,7 @@
     <Content Include="Scripts\Cama.js" />
     <Content Include="Scripts\generic.js" />
     <Content Include="Scripts\Marca.js" />
+    <Content Include="Scripts\Productos.js" />
     <Content Include="Scripts\tipoHabitacion.js" />
     <Content Include="Scripts\tipoUsuario.js" />
     <Content Include="Web.config" />
@@ -123,6 +124,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CamaController.cs" />
     <Compile Include="Controllers\MarcaController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\TipoHabitacionController.cs" />
     <Compile Include="Controllers\TipoUsuarioController.cs" />
     <Compile Include="Global.asax.cs">
@@ -168,6 +170,7 @@
     <Content Include="Views\TipoUsuario\Index.cshtml" />
     <Content Include="Views\Cama\Index.cshtml" />
     <Content Include="Views\Marca\Index.cshtml" />
+    <Content Include="Views\Productos\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

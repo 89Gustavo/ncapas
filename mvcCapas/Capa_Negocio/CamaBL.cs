@@ -16,6 +16,11 @@ namespace Capa_Negocio
             CamalDAL oCamalDAL = new CamalDAL();
             return oCamalDAL.ListarCamas();
         }
-       
+        public List<CamaCLS> FiltrarCamas(string nombreCama)
+        {
+            CamalDAL oCamalDAL = new CamalDAL();
+            return oCamalDAL.FiltrarCamas(nombreCama);
+        }
+
     }
 }

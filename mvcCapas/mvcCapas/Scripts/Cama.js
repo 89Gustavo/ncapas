@@ -6,9 +6,17 @@ function listarTipoHabtiacion() {
 
     pintar({
         url: "Cama/listarCama",
-        id: "tablaCama",
+        id: "divTabla",
         cabeceras: ["Id cama", "Nombre", "Descripcion"],
         propiedades: ["idCama", "nombre", "descripcion"]
+    }, {
+        busqueda: true,
+        url: "Cama/filtrarCama",
+        nombrParametro: "nombreCama",
+        id: "txtCama",
+        type:"text",
+        placeholder: "Ingrese cama",
+        idBoton:"btnCama"
     })
 
 

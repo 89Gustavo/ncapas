@@ -11,7 +11,7 @@ namespace mvcCapas.Controllers
 {
     public class TipoHabitacionController : Controller
     {
-        // GET: TipoHabitacion
+
         public ActionResult Index()
         {
             return View();
@@ -25,7 +25,6 @@ namespace mvcCapas.Controllers
             return View();
         }
 
-        //[{"id":1,"nombre":"Simple","descripcion":"Solo para uno"},{"id":2,"nombre":"Doble","descripcion":"Solo para casados"}]
         public ActionResult Lista() {
 
             TipoHabitacionBL obj = new TipoHabitacionBL();

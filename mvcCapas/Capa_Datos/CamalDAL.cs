@@ -67,5 +67,57 @@ namespace Capa_Datos
 
             return lista;
         }
+        public List<CamaCLS> FiltrarCamas(string nombreCama)
+        {
+            List<CamaCLS> lista = null;
+            using (SqlConnection cn = new SqlConnection(cadena))
+            {
+
+                try
+                {
+                    cn.Open();
+
+
+                    using (SqlCommand cmd = new SqlCommand("uspFiltarCama", cn))
+                    {
+                        // buena practica indicar que prcedure
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@nombrecama", nombreCama);
+                        SqlDataReader drd = cmd.ExecuteReader();
+
+
+                        if (drd != null)
+                        {
+                            lista = new List<CamaCLS>();
+                            CamaCLS oCamaCLS;
+                            int posId = drd.GetOrdinal("IIDCAMA");
+                            int posNombre = drd.GetOrdinal("NOMBRE");
+                            int posDescripcion = drd.GetOrdinal("DESCRIPCION");
+                            while (drd.Read())
+                            {
+                                oCamaCLS = new CamaCLS();
+                                oCamaCLS.idCama = drd.IsDBNull(posId) ? 0
+                                    : drd.GetInt32(posId);
+                                oCamaCLS.nombre = drd.IsDBNull(posNombre) ? ""
+                                    : drd.GetString(posNombre);
+                                oCamaCLS.descripcion = drd.IsDBNull(posNombre) ? ""
+                                    : drd.GetString(posDescripcion);
+
+                                lista.Add(oCamaCLS);
+                            }
+                        }
+                    }
+
+
+                    cn.Close();
+                }
+                catch (Exception ex)
+                {
+                    cn.Close();
+                }
+            }
+
+            return lista;
+        }
     }
 }

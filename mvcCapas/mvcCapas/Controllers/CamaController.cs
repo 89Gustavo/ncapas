@@ -21,5 +21,15 @@ namespace mvcCapas.Controllers
             CamaBL oCamaBL = new CamaBL();
             return Json(oCamaBL.listarCama(), JsonRequestBehavior.AllowGet);
         }
+        //simular
+        /*  public string busqueda(string nombreCama) {
+              return nombreCama;
+          }*/
+
+        public JsonResult filtrarCama(string nombreCama)
+        {
+            CamaBL oCamaBL = new CamaBL();
+            return Json(oCamaBL.FiltrarCamas(nombreCama), JsonRequestBehavior.AllowGet);
+        }
     }
 }
