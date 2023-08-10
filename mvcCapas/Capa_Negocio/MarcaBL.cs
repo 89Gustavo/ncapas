@@ -16,5 +16,10 @@ namespace Capa_Negocio
 
             return oMarDAL.ListarMarca();
         }
+        public List<MarcaCLS> FiltrarMarca(string marca) {
+            MarcaDAL oMarDAL = new MarcaDAL();
+
+            return oMarDAL.FiltrarMarca(marca);
+        }
     }
 }

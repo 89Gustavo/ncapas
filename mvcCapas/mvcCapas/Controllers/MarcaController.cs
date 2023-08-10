@@ -22,5 +22,12 @@ namespace mvcCapas.Controllers
             return Json(oMarcaBL.ListaMarca(), JsonRequestBehavior.AllowGet);
         
         }
+        public JsonResult FiltrarMarca(string marca)
+        {
+            MarcaBL oMarcaBL = new MarcaBL();
+
+            return Json(oMarcaBL.FiltrarMarca(marca), JsonRequestBehavior.AllowGet);
+
+        }
     }
 }

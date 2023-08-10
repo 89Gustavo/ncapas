@@ -23,5 +23,12 @@ namespace mvcCapas.Controllers
             tipoUsuarioBL obj = new tipoUsuarioBL();
             return Json(obj.listarTipoUsuario(), JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult FiltrarUsuarios(string tipoUsuario)
+        {
+
+            tipoUsuarioBL obj = new tipoUsuarioBL();
+            return Json(obj.FiltrarTipoUsuario(tipoUsuario), JsonRequestBehavior.AllowGet);
+        }
     }
 }

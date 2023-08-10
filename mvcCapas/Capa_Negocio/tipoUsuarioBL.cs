@@ -14,5 +14,9 @@ namespace Capa_Negocio
             tipoUsuarioDAL oTipoUsuarioDAL = new tipoUsuarioDAL();
             return oTipoUsuarioDAL.listarTipoUsuario();
         }
+        public List<tipoUsuairoCLS> FiltrarTipoUsuario(string tipoUsuario) {
+            tipoUsuarioDAL oTipoUsuarioDAL = new tipoUsuarioDAL();
+            return oTipoUsuarioDAL.FiltrarTipoUsuario(tipoUsuario);
+        }
     }
 }
