@@ -1,14 +1,16 @@
 ﻿window.onload = function () {
     listarTipoHabtiacion();
 }
-
 function listarTipoHabtiacion() {
 
     pintar({
         url: "TipoHabitacion/Lista",
         id: "divTabla",
         cabeceras: ["Id", "Nombre", "Descripcion"],
-        propiedades: ["id", "nombre", "descripcion"]
+        propiedades: ["id", "nombre", "descripcion"],
+        editar: true,
+        eliminar: true,
+        propiedadId:"id"
     }, {
         busqueda: true,
         url: "TipoHabitacion/filtrarTipoHabicionNombre",
@@ -19,17 +21,29 @@ function listarTipoHabtiacion() {
         placeholder: "Ingrese cama",
         idBoton: "btnCama"
     })
-
-   
 }
 
-/*function Buscar() {
-    var nombreTipoHabitacion = get("txtNombreTipoHabiacion");
-    pintar({
-        url: "TipoHabitacion/filtrarTipoHabicionNombre/?nombreHabitacion=" + nombreHabitacion,
-        id: "divTabla",
-        cabeceras: ["Id", "Nombre", "Descripcion"],
-        propiedades: ["id", "nombre", "descripcion"]
+function GuardarDatos() {
+   var frmTipoH = document.getElementById("frmTipoHabitacion");
+    var frm = new FormData(frmTipoH);
+    fetchPostText("TipoHabitacion/guardarDatos", frm, function (res) {
+        if (res == "1") {
+            LimpiarCampos();
+            listarTipoHabtiacion();
+   
+        }
     })
-   // alert(nombreTipoHabitacion);
-}*/
+}
+
+function LimpiarCampos() {
+    limpiarDatosInput("frmTipoHabitacion", ["id"]);
+    Correcto("correcto");
+}
+
+function Editar(id) {
+    recuperarGenerico("TipoHabitacion/recuperarTipoHabitacion/?id=" + id, "frmTipoHabitacion");
+}
+
+function Eliminar(id) {
+    alert(id);
+}

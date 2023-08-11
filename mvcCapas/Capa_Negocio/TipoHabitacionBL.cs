@@ -22,5 +22,15 @@ namespace Capa_Negocio
             TipoHabitacionDAL oTipoHabitacionDAL = new TipoHabitacionDAL();
             return oTipoHabitacionDAL.filtrarTipoHabitacion(nombreHabitacion);
         }
+        public int guardarTipoHabitacion(TipoHabitacionCLS oTipoHabitacion) {
+            TipoHabitacionDAL oTipoHabitacionDAL = new TipoHabitacionDAL();
+            return oTipoHabitacionDAL.guardarTipoHabitacion(oTipoHabitacion);
+        }
+
+        public TipoHabitacionCLS recuperarTipoHabitacion(int id) {
+            TipoHabitacionDAL oTipoHabitacionDAL = new TipoHabitacionDAL();
+            return oTipoHabitacionDAL.recuperarTipoHabitacion(id);
+
+        }
     }
 }

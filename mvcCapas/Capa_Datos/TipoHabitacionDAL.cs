@@ -134,7 +134,81 @@ namespace Capa_Datos
 
             return lista;
         }
+        public int guardarTipoHabitacion(TipoHabitacionCLS oTipoHabitacion)
+        {
+            int rpta = 0;
+            using (SqlConnection cn = new SqlConnection(cadena))
+            {
+                try
+                {
+                    cn.Open();
+                    using (SqlCommand cmd = new SqlCommand("uspGuardarTipohabitacion", cn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id", oTipoHabitacion.id);
+                        cmd.Parameters.AddWithValue("@nombre", oTipoHabitacion.nombre);
+                        cmd.Parameters.AddWithValue("@descripcion", oTipoHabitacion.descripcion);
+                        
+                        rpta = cmd.ExecuteNonQuery();
+                        cn.Close();
+
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    rpta = 0;
+                    cn.Close();
+                }
+                return rpta;
+            }
+        }
+        public TipoHabitacionCLS recuperarTipoHabitacion(int id)
+        {
+            TipoHabitacionCLS oTipoHabitacionCLS = null;
+            // string cadena = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
+            using (SqlConnection cn = new SqlConnection(cadena))
+            {
+
+                try
+                {
+                    cn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("uspRecuperarTipoHabitacion", cn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id", id);
+                        SqlDataReader drd = cmd.ExecuteReader();
+
+                        if (drd != null)
+                        {
+                           
+                            
+                            int posId = drd.GetOrdinal("IIDTIPOHABILITACION");
+                            int posNombre = drd.GetOrdinal("NOMBRE");
+                            int posDescripcion = drd.GetOrdinal("DESCRIPCION");
+                            while (drd.Read())
+                            {
+                                oTipoHabitacionCLS = new TipoHabitacionCLS();
+                                oTipoHabitacionCLS.id = drd.GetInt32(posId);
+                                oTipoHabitacionCLS.nombre = drd.GetString(posNombre);
+                                oTipoHabitacionCLS.descripcion = drd.GetString(posDescripcion);
+
+                                
+                            }
+                        }
+                    }
 
 
+                    cn.Close();
+                }
+                catch (Exception ex)
+                {
+                    cn.Close();
+                }
+            }
+
+            return oTipoHabitacionCLS;
+        }
     }
 }

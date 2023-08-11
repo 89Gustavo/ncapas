@@ -116,6 +116,7 @@
     <Content Include="Scripts\generic.js" />
     <Content Include="Scripts\Marca.js" />
     <Content Include="Scripts\Productos.js" />
+    <Content Include="Scripts\SweetAlert.js" />
     <Content Include="Scripts\tipoHabitacion.js" />
     <Content Include="Scripts\tipoUsuario.js" />
     <Content Include="Web.config" />
@@ -171,6 +172,7 @@
     <Content Include="Views\Cama\Index.cshtml" />
     <Content Include="Views\Marca\Index.cshtml" />
     <Content Include="Views\Productos\Index.cshtml" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
