@@ -1,7 +1,7 @@
 ﻿
 var objConfiguratcionGlobal;
 var objBusquedaGlobal;
-function pintar(objConfiguratcion, objBusqueda){
+function pintar(objConfiguratcion, objBusqueda,objFormulario){
 
     var raiz = document.getElementById("hdfOculto").value;
     var urlAbolute = window.location.protocol + "//" +
@@ -37,6 +37,12 @@ function pintar(objConfiguratcion, objBusqueda){
 
                 objConfiguratcionGlobal = objConfiguratcion;
                 objBusquedaGlobal = objBusqueda;
+               
+                if (objFormulario == undefined) {
+                    contenido += "";
+                } else { 
+                contenido += construirFormulario(objFormulario);
+                }
 
                 contenido += `<div class="input-group mb-3">`
                 contenido += `<input type="${objBusqueda.type}" 
@@ -100,7 +106,9 @@ function confirmacion(texto="Desea guardar los cambios",title="confirmacion", ca
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: 'Si',
+        cancelButtonText: 'No'
+
     }).then((result) => {
         if (result.isConfirmed) {
             callback();
@@ -182,10 +190,24 @@ function fetchGet(url, callback) {
         })
 }
 
-function fetchPostText(url,frm, callback) {
+function fetchGetText(url, callback) {
     var raiz = document.getElementById("hdfOculto").value;
     var urlAbolute = window.location.protocol + "//" + window.location.host + raiz + url;
 
+    fetch(urlAbolute).then(res => res.text())
+        .then(res => {
+
+            callback(res)
+
+        }).catch(err => {
+            console.log(e + res)
+
+        })
+}
+
+function fetchPostText(url,frm, callback) {
+    var raiz = document.getElementById("hdfOculto").value;
+    var urlAbolute = window.location.protocol + "//" + window.location.host + raiz + url;
 
     fetch(url, {
         method: "POST",
@@ -223,4 +245,40 @@ function recuperarGenerico(url, idformulario, execpciones = []) {
         }
 
     });
+}
+
+function construirFormulario(objFormulario) {
+    var contenido = "";
+    var type = objFormulario.type;
+    contenido = "";
+   /* if (type == undefined) {
+        contenido += "";
+    }*/
+ var elementos = objFormulario.formulario;
+   
+     contenido = `<div>`
+    var arrayElemento;
+    var numeroArrayelemnto;
+    for (var i = 0; i < elementos.length; i++) {
+        arrayElemento = elementos[i];
+        numeroArrayelemnto = arrayElemento.length;
+        contenido += "<div class='row'>";
+        for (var j = 0; j < numeroArrayelemnto; j++) {
+            var hijosArray = arrayElemento[j]
+            var typeElemento = hijosArray.type;
+            contenido += `<div class="${hijosArray.class}">`
+            contenido += `<label>${hijosArray.label}</label>`
+            if (typeElemento == "text") {
+                contenido += `<input type="text" class="form-control"  name="${hijosArray.name}" value="${hijosArray.value}" 
+                ${hijosArray.redonly == true ?"readonly":""}>`
+            }
+            contenido += `</div>`
+        }
+
+    }
+    
+    contenido += `</div>`
+
+
+        return contenido;
 }

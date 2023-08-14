@@ -6,7 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <!--script src="~/Scripts/modernizr-2.8.3.js"></!--script-->
 </head>
 <body>
 
@@ -42,19 +42,19 @@
                     </li>
 
 
-                    <li>
+                    @*<li>
                         <a href="#digerleri">
                             <i class="fa fa-eye fa-lg"></i> Devam edin...
                         </a>
                     </li>
-                    <!--li data-toggle="collapse" data-target="#new" class="collapsed">
+                    li data-toggle="collapse" data-target="#new" class="collapsed">
       <a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>
     </li>
     <ul class="sub-menu collapse" id="new">
       <li>New New 1</li>
       <li>New New 2</li>
       <li>New New 3</li>
-    </ul-->
+    </ul*@
                 </ul>
             </div>
         </div>
@@ -66,7 +66,7 @@
  
     <input type="hidden" id="hdfOculto" value="@Url.Content("~")"/>
 
-
+    <script src="~/Scripts/menuDinamico.js"></script>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>

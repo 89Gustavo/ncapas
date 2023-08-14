@@ -113,8 +113,11 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Cama.js" />
+    <Content Include="Scripts\fomularios.js" />
+    <Content Include="Scripts\FuncionesGeneeriacas.js" />
     <Content Include="Scripts\generic.js" />
     <Content Include="Scripts\Marca.js" />
+    <Content Include="Scripts\menuDinamico.js" />
     <Content Include="Scripts\Productos.js" />
     <Content Include="Scripts\SweetAlert.js" />
     <Content Include="Scripts\tipoHabitacion.js" />

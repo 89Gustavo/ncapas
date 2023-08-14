@@ -47,5 +47,10 @@ namespace mvcCapas.Controllers
             TipoHabitacionBL obj = new TipoHabitacionBL();
             return Json( obj.recuperarTipoHabitacion(id), JsonRequestBehavior.AllowGet);
         }
+        public int eliminarTipoHabitacion(int id)
+        {
+            TipoHabitacionBL obj = new TipoHabitacionBL();
+            return obj.eliminarTipoHabitacion(id);
+        }
     }
 }

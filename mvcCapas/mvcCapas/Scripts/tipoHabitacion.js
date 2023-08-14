@@ -45,5 +45,12 @@ function Editar(id) {
 }
 
 function Eliminar(id) {
-    alert(id);
+    confirmacion("Desea eliminar el tipo habitacion?", "Confirmacion elimnar", function (res) {
+        fetchGetText("TipoHabitacion/eliminarTipoHabitacion/?id=" + id, function (rpt) {
+            if (rpt == "1") {
+                Correcto("Se elimino correctamente");
+                listarTipoHabtiacion();
+            }
+        })
+    });
 }

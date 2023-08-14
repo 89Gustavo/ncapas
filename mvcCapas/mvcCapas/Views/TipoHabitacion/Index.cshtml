@@ -11,17 +11,22 @@
     <fieldset class="container-fluid mb-3" style="border:1px solid; border-radius:5px; margin-right:15px">
         <legend>Datos de tipo habitacion</legend>
         <form id="frmTipoHabitacion">
-            <div class=" mb-3">
-                <label>ID TIPO HABITACION</label>
-                <input type="text" class="form-control" name="id" value="0" readonly >
+            <div class="row">
+                <div class=" mb-3 col-md-6">
+                    <label>ID TIPO HABITACION</label>
+                    <input type="text" class="form-control" name="id" value="0" readonly>
+                </div>
+                <div class=" mb-3 col-md-6">
+                    <label>NOMBRE HABITACION</label>
+                    <input type="text" class="form-control" name="nombre" id="" placeholder="">
+                </div>
+
             </div>
-            <div class=" mb-3">
-                <label>NOMBRE HABITACION</label>
-                <input type="text" class="form-control" name="nombre" id="" placeholder="">
-            </div>
-            <div class=" mb-3">
-                <label>DESCRIPCION HABITACION</label>
-                <input type="text" class="form-control" name="descripcion" id="" placeholder="">
+            <div class="row">
+                <div class=" mb-3 col-md-12">
+                    <label>DESCRIPCION HABITACION</label>
+                    <input type="text" class="form-control" name="descripcion" id="" placeholder="">
+                </div>
             </div>
             <div class=" mb-3">
                 <button type="button" class="btn btn-success" onclick="GuardarDatos()">Guardar</button>
